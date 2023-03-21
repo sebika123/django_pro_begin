@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+{% block content %}
+
+{% include 'myfirst.html' %}
+<ul> {% for  x in mymembers %}
+    <li> {{ x.firstname }}  </li>
+    {% endfor %}
+</ul> 
+
+{% comment %}
+  <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %} 
+
+{% endblock %}
