@@ -25,11 +25,12 @@ def details(request, id):
   return HttpResponse(template.render(context, request))
 
 def testing(request):
-  mymembers=Member.objects.all().values
+  mymembers=Member.objects.all().order_by('id').values()
   template=loader.get_template('templates.html')
   context={
     'mymembers': mymembers,
     
   }
   return HttpResponse(template.render(context,request))
+ 
 

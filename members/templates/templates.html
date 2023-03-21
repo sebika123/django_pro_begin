@@ -1,5 +1,15 @@
+
 {% extends "master.html" %}
+{% load static %}
+
+
+{% block title %}
+
+<link rel="stylesheet" href="{% static 'myglobal.css' %}"> 
+{% endblock %}
 {% block content %}
+
+
 
 {% include 'myfirst.html' %}
 <ul> {% for  x in mymembers %}
@@ -10,5 +20,25 @@
 {% comment %}
   <h1>Welcome ladies and gentlemen</h1>
 {% endcomment %} 
+
+
+
+<table border='1'>
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Joined Date</th>
+  </tr>
+  {% for x in mymembers %}
+    <tr>
+      <td>{{ x.id }}</td>
+        <td>{{ x.firstname }}</td>
+      <td>{{ x.lastname }}</td>
+      <td>{{ x.joined_date}}</td>
+    </tr>
+  {% endfor %}
+</table>
+
 
 {% endblock %}
